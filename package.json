@@ -10,6 +10,7 @@
     "express-load": "^1.1.16",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "socket.io": "^2.0.4"
   }
 }

@@ -7,7 +7,7 @@
 <section>
 	<form action="/contato/<%- id %>?_method=put" method="post">
 		<label>Nome:</label>
-		<input type="text" name="contato["nome"]" value="<%- contato.nome %>">
+		<input type="text" name="contato[nome]" value="<%- contato.nome %>">
 		<label>E-mail:</label>
 		<input type="text" name="contato[email]" value="<%- contato.email %>">
 		<button type="submit">Atualizar</button>
