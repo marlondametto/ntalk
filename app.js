@@ -1,3 +1,5 @@
+//import { Socket } from 'dgram';
+
 var express = require('express')
 	, load = require('express-load')
 	, bodyParser = require('body-parser')
@@ -20,15 +22,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 
 load('models').then('controllers').then('routes').into(app);
-
-io.sockets.on('connection', function(client)
-{
-	client.on('send-server', function(data){
-		var msg = "<b>"+data.nome+":</b>"+data.msg+"<br>";
-		client.emit('send-client', msg);
-		client.broadcast.emit('send-client', msg);
-	});
-});
+load('sockets').into(io);
 
 // middlewares de tratamento de erros
 app.use(error.notFound);
